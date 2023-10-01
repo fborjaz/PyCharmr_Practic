@@ -1,11 +1,13 @@
-# Leer un número entero positivo desde teclado e imprimir la suma de los dígitos que lo componen
+# Leer un numero entero positivo desde teclado e imprimir la suma de la cantidad de digitos que tiene.
 
-Ln_num_str = input("Ingresa un número entero positivo: ")
-
-# Verificar si la entrada es un número entero positivo
-if Ln_num_str.isdigit():
-    num = int(Ln_num_str)
-    Ln_digit_sum = sum(int(Ln_digit) for Ln_digit in Ln_num_str)
-    print(f"La suma de los dígitos es: {Ln_digit_sum}")
-else:
-    print("Por favor, ingresa un número entero positivo válido.")
+while True:
+    try:
+        numero = int(input("Ingrese un número entero positivo: "))
+        if numero < 0:
+            print("El número ingresado no es positivo. Intente de nuevo.")
+        else:
+            cantidad_digitos = len(str(numero))
+            print(f"La cantidad de dígitos en {numero} es {cantidad_digitos}")
+            break
+    except ValueError:
+        print("Error: . Ingresar solo números.")
