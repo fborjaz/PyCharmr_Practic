@@ -1,17 +1,24 @@
-Ln_num_str = ""
-Ln_peers = 1
+# Solicitar al usuario que ingrese numeros enteros positivos y, por cada uno, imprimir la suma de los digitos que lo componen. La condicion de corte es que se ingrese el numero -1. Al finalizar, mostrar cuantos de los numeros ingresados por el usuario fieron numeros pares
 
-while Ln_num_str != "1":
-    Ln_num_str = input("Ingrese un numero entero positivo: ")
+Ln_num = 0
+Ln_sum = 1
+Ln_par = 0
 
-    if Ln_num_str.isdigit():
-        Ln_num = int(Ln_num_str)
-        Ln_num_sum = sum(int(Ln_digit) for Ln_digit in Ln_num_str)
-        print(f"La suma de los dígitos es: {Ln_num_sum}")
+while Ln_num != -1:
+    try:
+        Ln_num = int(input("Ingrese un número entero positivo: "))
+        if Ln_num < -1:
+            print('El número ingresado no es positivo. Intente de nuevo.')
+        else:
+            digitos = str(Ln_num)
+            for digito in range(len(digitos)):
+                Ln_sum += + digito
 
         if Ln_num % 2 == 0:
-            Ln_peers += 1
-    else:
-        print("No ha ingresado un número entero positivo válido.")
+            Ln_par += + 1
 
-print("La cantidad de números pares es:", Ln_peers)
+    except:
+        print('Error: Ingresar solo numeros')
+
+print(f"La cantidad de pares ingresados son: {Ln_par}")
+print(f"La cantidad total de digitos ingresados es: {Ln_sum}")
