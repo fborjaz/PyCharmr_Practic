@@ -17,7 +17,7 @@ while Ln_num != -1:
         if Ln_num % 2 == 0:
             Ln_par += + 1
 
-    except:
+    except ValueError:
         print('Error: Ingresar solo numeros')
 
 print(f"La cantidad de pares ingresados son: {Ln_par}")
